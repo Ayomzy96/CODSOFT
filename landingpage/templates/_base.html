@@ -1,0 +1,35 @@
+{% load compress %}
+{% load static %}
+ 
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content=
+        "width=device-width, initial-scale=1.0">
+    <title>Django + Tailwind CSS</title>
+ 
+    {% compress css %}
+    <link rel="stylesheet"
+        href="{% static 'src/output.css' %}">
+    {% endcompress %}
+ 
+</head>
+<body class="bg-green-50">
+    <div style="width: 100px; height: 200px; position: relative; background: white; right: 90px">
+        <div style="left: 99px; top: 40px; position: absolute; color: #7B66FF; font-size: 40px; font-family: JejuGothic; font-weight: 400; word-wrap: break-word">A-Tech<br> accessories</div>
+              
+            
+        </div>
+        <button style="width: 116px; left: 787px; top: 61px; position: absolute; color: black; font-size: 24px; font-family: Palanquin Dark; font-weight: 400; word-wrap: break-word"><a  href="{% url 'signin' %}">Login</a></button>
+        <button style="width: 90px; left: 397px; top: 61px; position: absolute; color: black; font-size: 24px; font-family: Palanquin Dark; font-weight: 400; word-wrap: break-word"><a  href="{% url 'home' %}">Home</a> </button>
+        <button style="width: 91px; left: 544px; top: 61px; position: absolute; color: black; font-size: 24px; font-family: Palanquin Dark; font-weight: 400; word-wrap: break-word"><a  href="{% url 'contact' %}">Contact </a>  </button>
+        <button style="width: 84px; left: 676px; top: 61px; position: absolute; color: black; font-size: 24px; font-family: Palanquin Dark; font-weight: 400; word-wrap: break-word"><a href="{% url 'about' %}">About </a> </button>
+        <div style="width: 141px; height: 45px; left: 950px; top: 59px; position: absolute; background: #7B66FF; border-radius: 5px"></div>
+          
+ {% block content %} {% endblock content %}
+</body>
+ 
+</html>
